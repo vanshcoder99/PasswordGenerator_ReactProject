@@ -44,8 +44,8 @@ function App() {
              <header>
         {/* Show the sign-in and sign-up buttons when the user is signed out */}
         <SignedOut>
-          <SignInButton />
-          <SignUpButton />
+          <SignInButton className="text-black mx-2 font-bold text-shadow-md text-[20px] border-2 px-5 py-2 rounded-md bg-blue-400 cursor-pointer"/>
+          <SignUpButton className="text-black mx-2 font-bold text-shadow-md text-[20px] border-2 px-5 py-2 rounded-md bg-blue-400 cursor-pointer" />
         </SignedOut>
         {/* Show the user button when the user is signed in */}
         <SignedIn>
