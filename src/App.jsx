@@ -1,4 +1,5 @@
 import { useState, useCallback, useEffect,useRef } from 'react'
+import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@clerk/clerk-react'
 import './App.css'
 
 function App() {
@@ -38,7 +39,19 @@ function App() {
       passGenerator()
     },[length,numAllowed,charAllowed,passGenerator])
   return (
+
       <div className='w-full max-w-3xl mx-auto shadow-md rounded-lg bg-red-500 px-4 py-3 my-8 text-white'>
+             <header>
+        {/* Show the sign-in and sign-up buttons when the user is signed out */}
+        <SignedOut>
+          <SignInButton />
+          <SignUpButton />
+        </SignedOut>
+        {/* Show the user button when the user is signed in */}
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+      </header>
         <h1 className='text-black text-center font-bold my-3'>Password Generator</h1>
 
         <div className='flex shadow-md rounded-lg overflow-hidden mb-6 mt-12 '>
